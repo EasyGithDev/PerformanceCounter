@@ -39,8 +39,21 @@ class Counter
         return $formater->format($this->elapsedTime);
     }
 
-    public static function run(callable $func, Formater $format = null, ...$args): \stdClass
+    public static function run(callable $func, ...$args): \stdClass
     {
+        $format = null;
+
+        if (count($args) > 0) {
+            $lastArg = $args[count($args) - 1];
+            if (
+                is_object($lastArg) &&
+                array_values(class_implements(get_class($lastArg)))[0]  == Formater::class
+            ) {
+                $format = $lastArg;
+                unset($args[count($args) - 1]);
+            }
+        }
+
         $counter = new self;
         $counter->start();
 

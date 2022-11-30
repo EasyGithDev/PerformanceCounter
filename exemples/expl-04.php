@@ -8,7 +8,8 @@ require_once __DIR__ . '/../classes/autoload.php';
 $counter = new Counter;
 
 $hrtime = $counter::run('mb_strtoupper',
+'hello world',
 new DefaultFormater, 
-'hello world');
+);
 
 var_dump($hrtime);
