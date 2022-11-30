@@ -2,7 +2,7 @@
 
 namespace PerformanceCounter;
 
-class DefaultFormater implements Formater
+class MicroFormater implements Formater
 {
     public function format(int $elapsedTime): string
     {

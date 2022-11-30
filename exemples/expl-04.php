@@ -1,7 +1,7 @@
 <?php
 
 use PerformanceCounter\Counter;
-use PerformanceCounter\DefaultFormater;
+use PerformanceCounter\MicroFormater;
 
 require_once __DIR__ . '/../classes/autoload.php';
 
@@ -9,7 +9,7 @@ $counter = new Counter;
 
 $hrtime = $counter::run('mb_strtoupper',
 'hello world',
-new DefaultFormater, 
+new MicroFormater, 
 );
 
 var_dump($hrtime);

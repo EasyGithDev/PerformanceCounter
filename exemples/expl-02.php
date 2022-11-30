@@ -1,7 +1,7 @@
 <?php
 
 use PerformanceCounter\Counter;
-use PerformanceCounter\DefaultFormater;
+use PerformanceCounter\MicroFormater;
 
 require_once __DIR__ . '/../classes/autoload.php';
 
@@ -15,6 +15,6 @@ for ($i = 0; $i < 100; $i++) {
 
 $elapsedTime = $counter->stop()
     ->elapsedTime()
-    ->format(new DefaultFormater);
+    ->format(new MicroFormater);
 
 var_dump($elapsedTime);

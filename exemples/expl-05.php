@@ -1,7 +1,7 @@
 <?php
 
 use PerformanceCounter\Counter;
-use PerformanceCounter\MicroFormater;
+use PerformanceCounter\HisFormater;
 
 require_once __DIR__ . '/../classes/autoload.php';
 
@@ -9,10 +9,11 @@ $counter = new Counter;
 
 $hrtime = $counter::run(function () {
     $a = 0;
-    for ($i = 0; $i < 100; $i++) {
+    for ($i = 0; $i < 5; $i++) {
+        sleep(1);
         $a++;
     }
 }, 
-new MicroFormater);
+new HisFormater);
 
 var_dump($hrtime);
