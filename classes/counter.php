@@ -22,7 +22,7 @@ class Counter
 
     public function elapsedTime(): Counter
     {
-        $this->hrtime = ($this->endAt - $this->starAt);
+        $this->elapsedTime = ($this->endAt - $this->starAt);
         return $this;
     }
 
@@ -36,7 +36,7 @@ class Counter
 
     public function format(Formater $formater): string
     {
-        return $formater->format($this->hrtime);
+        return $formater->format($this->elapsedTime);
     }
 
     public static function run(callable $func, Formater $format = null, ...$args): \stdClass
