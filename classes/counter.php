@@ -6,7 +6,7 @@ class Counter
 {
     protected int $starAt;
     protected int $endAt;
-    protected int $hrtime;
+    protected int $elapsedTime;
 
     public function start(): Counter
     {
@@ -27,11 +27,11 @@ class Counter
     }
 
     /**
-     * Get the value of hrtime
+     * Get the value of elapsedTime
      */
-    public function getHrtime()
+    public function getElapsedTime()
     {
-        return $this->hrtime;
+        return $this->elapsedTime;
     }
 
     public function format(Formater $formater): string
@@ -50,7 +50,7 @@ class Counter
 
         $obj = new \stdClass;
         $obj->result = $result;
-        $obj->elapsedTime = is_null($format) ? $counter->getHrtime() : $counter->format($format);
+        $obj->elapsedTime = is_null($format) ? $counter->getElapsedTime() : $counter->format($format);
 
         return $obj;
     }

@@ -4,5 +4,5 @@ namespace PerformanceCounter;
 
 interface Formater
 {
-    public function format(int $hrtime) : string;
+    public function format(int $elapsedTime): string;
 }

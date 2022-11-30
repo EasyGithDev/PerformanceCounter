@@ -4,9 +4,8 @@ namespace PerformanceCounter;
 
 class DefaultFormater implements Formater
 {
-
-    public function format(int $hrtime): string
+    public function format(int $elapsedTime): string
     {
-        return $hrtime / 1.e6;
+        return $elapsedTime / 1.e6;
     }
 }
