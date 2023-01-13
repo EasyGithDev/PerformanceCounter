@@ -1,0 +1,15 @@
+{
+    "name": "easygithdev/performance-counter",
+    "description": "",
+    "keywords": [],
+    "license": "MIT License",
+    "authors": [
+        {
+            "name": "Florent Brusciano",
+            "email": "easygithdev@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.0"
+    }
+}
